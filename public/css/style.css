@@ -2,29 +2,6 @@
   height: 70vh;
 }
 
-body{
-  background-image: url("/imagenes/1531687446992644.JPG");
-  background-size: 100%;
-}
-h1{
-  text-align: center;
-  font-family: 'Muli',  sans-serif;
-}
-.col-sm{
-text-align: center;
-}
-.card{
-  margin: 15%;
-}
-
-#post{
-display: none;
-}
-#img{
-  height: 10%;
-
-}
-
 .btn{
   background-color: rgb(52, 158, 123);
   color: white;
@@ -36,4 +13,4 @@ display: none;
   box-shadow: inset 0 0 0 3px rgb(52, 158, 123);
   }
 
- 
+  

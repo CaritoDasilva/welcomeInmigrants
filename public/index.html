@@ -44,69 +44,65 @@
       </div>
     </div>
   </div>
-  <!-- Menú -->
-  <section class="secondSection">
-    <div class="pos-f-t">
+<!-- Menú -->
+<section class="secondSection">
+  <div class="pos-f-t">
 
-      <nav class="navbar navbar-dark" style="background-color: #26A69A;">
-        <a class="navbar-brand" href="#">ALIMENTACIÓN</a>
+    <nav class="navbar navbar-dark" style="background-color: #26A69A;">
+      <a class="navbar-brand" href="#">ALIMENTACIÓN</a>
 
-        <button onclick="toggleMenu()" class="navbar-toggler" type="button" aria-controls="navbarToggleExternalContent" aria-expanded="false"
-          aria-label="Toggle navigation">
-
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </nav>
-      <nav id="sideMenu" class="nav flex-column float-left menu bg-dark menu_closed">
-        <div onclick="toggleMenu()" class="close_button">
-          <span aria-hidden="true">&times;</span>
-        </div>
-        <div class="menu_content">
-          <a class="nav-link active" href="#">Active</a>
-          <a class="nav-link" href="#">Link</a>
-          <a class="nav-link" href="#">Link</a>
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </div>
-      </nav>
+      <button onclick="toggleMenu()" class="navbar-toggler" type="button" aria-controls="navbarToggleExternalContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+    <nav id="sideMenu" class="nav flex-column float-left menu bg-dark menu_closed">
+      <div onclick="toggleMenu()" class="close_button">
+        <span aria-hidden="true">&times;</span>
+      </div>
+      <div class="menu_content">
+        <a class="nav-link active" href="#">Active</a>
+        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </div>
+    </nav>
+  </div>
+  <!-- inicio de img -->
+  <div class="container-fluid">
+    <div class="row">
+      <img src="../imagenes/ja-ma-216495-unsplash.jpg" class="img-fluid" alt="Responsive image">
     </div>
-    <!-- inicio de img -->
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-12">
-        <img src="../imagenes/ja-ma-216495-unsplash.jpg" class="img-fluid" alt="Responsive image">
-        </div>
-      </div>
-      <!-- Post Usuario -->
-      <div class="col-sm"></div>
-      <div class="row">
-        <div class="col-sm-3"></div>
-        <div class="col-sm-6">
-          <!-- Caja de comentarios -->
-          <div class="card" style="width: 100%;">
-            <div class="card-body">
-              <textarea class="form-control" id="postArea" type="text" placeholder="¿En que te podemos ayudar?"></textarea>
-              <button class="btn btn-light" id="sendPost">SEND</button>
-            </div>
+    <!-- Post Usuario -->
+    <div class="col-sm"></div>
+    <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6">
+        <!-- Caja de comentarios -->
+        <div class="card" style="width: 100%;">
+          <div class="card-body">
+            <textarea class="form-control" id="postArea" type="text" placeholder="¿En que te podemos ayudar?"></textarea>
+            <button class="btn btn-light" id="sendPost">SEND</button>
           </div>
-        </div>
-        <div class="col-sm-3"></div>
-      </div>
-      <!-- div para almacenar post -->
-      <div class="row">
-        <div class="col-sm-3"></div>
-        <div class="col-sm-6">
-          <div class="card" style="width: 100%;" id="postPrint">
-            <!-- aquí dentro van los post -->
-
-          </div>
-          <div id="printLike"></div>
         </div>
       </div>
       <div class="col-sm-3"></div>
     </div>
-  </section>
-
-  <!-- Termino de post -->
+    <!-- div para almacenar post -->
+    <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6">
+        <div class="card" style="width: 100%;" id="postPrint">
+          <!-- aquí dentro van los post -->
+        </div>
+        <div id="printLike"></div>
+      </div>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+  </div>
+</section>
+<!-- Termino de post -->
 
   <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>
@@ -130,4 +126,3 @@
 </body>
 
 </html>
-

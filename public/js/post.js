@@ -1,4 +1,3 @@
-
 // POST USUARIO
 function posting() {
   // POST INICIO
@@ -6,37 +5,56 @@ function posting() {
     const currentUser = firebase.auth().currentUser;
     const postAreaText = postArea.value;
     postArea.value = ' ';
-    //Para tener una nueva llave en la colección messages
-    let newPostKey = firebase
-      .database()
-      .ref()
-      .child('post')
-      .push().key;
-
-    firebase
-      .database()
-      .ref(`post/${newPostKey}`)
-      .set({
-        creator: currentUser.displayName,
-        creatorEmail: currentUser.email,
-        text: postAreaText,
-      });
+    if (postAreaText === '') {
+      alert("Por favor, debe introducir texto");
+    } else {
+      //Para tener una nueva llave en la colección messages
+      let newPostKey = firebase
+        .database()
+        .ref()
+        .child("post")
+        .push().key;
+      firebase
+        .database()
+        .ref(`post/${newPostKey}`)
+        .set({
+          creator: currentUser.displayName,
+          creatorEmail: currentUser.email,
+          text: postAreaText,
+          counter : 0
+        });
+    }
+  });
+}
+//Imprimir Post
+const drawPosts = posts => {
+  postPrint.innerHTML = "";
+  Object.entries(posts.val()).forEach(post => {
+    postPrint.innerHTML += `
+           <ul class="list-group list-group-flush" style="width: 100%;">
+             <li class="list-group-item">
+             <h6 class="card-title">${post[1].creator}</h6>
+             <p class="card-text text-justify">${post[1].text}</p>
+             <span>
+             <i class="fas fa-edit" data-text="${post[1].text}" onclick="updatePost("eventUpdate") id="editPost"> </i> <i class="fas fa-trash-alt" 
+             data-post="${post[0]}" onclick="deletePost(event)"></i>
+             <i class="far fa-hand-peace" data-like="${post[0]}" onclick="counterLike(event)"></i><span>${post[1].counter}</span>
+             </span> 
+             </li>
+           </ul>
+          
+       `;
   });
 };
-//Imprimir Post
-const drawPosts = (posts) => {
-  postPrint.innerHTML = '';
-  Object.entries(posts.val()).forEach((post) => {
-    postPrint.innerHTML += `
-            <ul class='list-group list-group-flush' style='width: 100%;'> 
-              <li class='list-group-item'>
-              <h6 class='card-title'>${post[1].creator}</h6>
-              <p class='card-text text-justify' class='posts'>${post[1].text}</p>
-              <i class='fas fa-edit' data-text='${post[0]}' onclick='updatePost(event)'></i> <i class='fas fa-trash-alt' data-post='${post[0]}' onclick='deletePost(event)'> </i> 
-              </li>
-            </ul>
-        `;
-  });
+// Like
+function counterLike(event) {
+  event.stopPropagation();
+  const counterId = event.target.getAttribute('data-like');
+  firebase.database().ref(`post/` + counterId).once("value", function(post) {
+    let total = (post.val().counter || 0) + 1;
+      firebase.database().ref(`post`).child(counterId).update({ 
+        counter: total });
+    });
 }
 //Borrar Post
 function deletePost(event) {
@@ -63,10 +81,8 @@ function updatePost(event) {
         text: postAreaText
       });
     }
-  });
-  //no puedo usar ide en post 
-  //data-text en todas parte donde se me plasca text area pongo id que corresponde a ese post por medio de una classname.
-  
+  }); 
 }
+
 
 
