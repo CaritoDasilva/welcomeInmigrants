@@ -40,16 +40,14 @@ const drawPosts = (posts) => {
 }
 //Borrar Post
 function deletePost(event) {
-  event.stopPropagation(); //se activa solamente donde se hace click
-  const postId = event.target.getAttribute('data-post');
-  firebase.database().ref('post/').child(postId).remove()
-    .then(function () {
-      console.log('El documento ha sido borrado');
-    })
-    .catch(function (error) {
-      // The document probably doesn't exist.
-      console.error('Error al editar el borrado', error);
-    });
+  if (confirm("¿Seguro que quieres borrar este post?")) {
+    event.stopPropagation(); //se activa solamente donde se hace click
+    const postId = event.target.getAttribute('data-post');
+    firebase.database().ref('post/').child(postId).remove();
+    return true;
+  } else {
+    return false;
+  }   
 }
 //Editar Post
 function updatePost(event) {
