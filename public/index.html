@@ -23,61 +23,25 @@
 
 <body>
   <!-- Login -->
-  <section class="firstSection" id="login">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm">
-        </div>
-        <div class="col-sm">
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <div>
-                <h1>SOCIAL INMG</h1>
-              </div>
-              <label class="colorCorreo" for="exampleInputEmail1">
-                <i class="far fa-envelope"> </i> Correo Electronico</label>
-              <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Enter email">
-              <div class="form-group">
-                <label class="colorCorreo" for=" exampleInputPassword1">
-                  <i class="fas fa-key"></i> Contraseña</label>
-                <input type="password" class="form-control" id="InputPassword" placeholder="Password">
-              </div>
-              <div class="form-group form-check">
-              </div>
-              <button type="text" id="btnValidar" class="btn btn-primary"> Entrar</button>
-              <u id="out">Sign Out</u>
-              <div id="firebaseui-auth-container"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm">
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- CAROOOOOOOOOOO 
-  <section>
   <div class="container-fluid">
     <div id="firebaseui-auth-container"></div>
     <u id="out">Sign Out</u>
     <!-- Pintura del chat -->
-    <div id="contactsChat"></div>
-
-    <div id="messageContainer"></div>
-    <div id="listContacts"></div>
-    <div class="row">
-
-      <label for="usr">Destinatario:</label>
-    </div>
-    <div class="row">
-      <input type="text" class="form-control col-md-4" id="receiverName">
-      <label for="exampleFormControlTextarea1"></label>
-    </div>
-    <div class="row">
-      <textarea class="form-control col-md-4 postTextArea" id="txt" rows="3" placeholder="Escribe tu mensaje..."></textarea>
-    </div>
-    <div class="row">
-      <button type="button" class="btn btn-outline-success" id="sendButton" value="SEND" onclick="sendMessage()">Enviar</button>
+    <div class="chatZone">
+      <div id="messageContainer"></div>
+      <div class="row">
+        <label for="usr">Destinatario:</label>
+      </div>
+      <div class="row">
+        <input type="text" class="form-control col-md-4" id="receiverName">
+        <div id="contactsChat"></div>
+      </div>
+      <div class="row">
+        <textarea class="form-control col-md-4" id="txt" rows="3" placeholder="Escribe tu mensaje..."></textarea>
+      </div>
+      <div class="row">
+        <button type="button" class="btn btn-outline-success" id="sendButton" value="SEND" onclick="sendMessage()">Enviar</button>
+      </div>
     </div>
   </div>
   <!-- Menú -->
@@ -112,7 +76,7 @@
         <img src="../imagenes/ja-ma-216495-unsplash.jpg" class="img-fluid" alt="Responsive image">
         </div>
       </div>
-       <!-- Post Usuario -->
+      <!-- Post Usuario -->
       <div class="col-sm"></div>
       <div class="row">
         <div class="col-sm-3"></div>
@@ -133,15 +97,17 @@
         <div class="col-sm-6">
           <div class="card" style="width: 100%;" id="postPrint">
             <!-- aquí dentro van los post -->
-            </div>
-          <div id="printLike"></div>
+
           </div>
+          <div id="printLike"></div>
         </div>
-        <div class="col-sm-3"></div>
       </div>
-    </div>  
+      <div class="col-sm-3"></div>
+    </div>
   </section>
+
   <!-- Termino de post -->
+
   <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-database.js"></script>
@@ -164,3 +130,4 @@
 </body>
 
 </html>
+

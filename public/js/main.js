@@ -1,7 +1,5 @@
 //Variables Globales
 let userCreate = null;
-let receiver = null;
-let userList = null;
 
 // Initialize Firebase
 var config = {
@@ -51,15 +49,16 @@ document.addEventListener('DOMContentLoaded', function () {
   } catch (e) {
     console.error(e);
   }
+
   firebase.database().ref('/users').on('value', showContacts);
   firebase.database().ref("/post").on("value", drawPosts);
+
+  document.getElementById('receiverName').addEventListener('keyup', findReceiver);
+  document.getElementById('receiverName').addEventListener('click', loadContacts);
+
 });
 
 out.addEventListener('click', () => {
-  firebase.auth().signOut()
-    .then(function () {
-      // Sign-out successful.
-    }).catch(function (error) {
-      // An error happened.
-    });
+  firebase.auth().signOut();
+
 });
