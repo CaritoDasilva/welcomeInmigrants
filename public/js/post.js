@@ -1,12 +1,11 @@
 // POST USUARIO
-
 function posting() {
   // POST INICIO
-  sendPost.addEventListener("click", () => {
+  sendPost.addEventListener('click', () => {
     const currentUser = firebase.auth().currentUser;
     const postAreaText = postArea.value;
-    postArea.value = " ";
-    if (postAreaText === "") {
+    postArea.value = ' ';
+    if (postAreaText === '') {
       alert("Por favor, debe introducir texto");
     } else {
       //Para tener una nueva llave en la colección messages
@@ -15,7 +14,6 @@ function posting() {
         .ref()
         .child("post")
         .push().key;
-
       firebase
         .database()
         .ref(`post/${newPostKey}`)
@@ -60,24 +58,31 @@ function counterLike(event) {
 }
 //Borrar Post
 function deletePost(event) {
-  event.stopPropagation(); //se activa solamente donde se hace click
-  const postId = event.target.getAttribute("data-post");
-  firebase.database().ref("/post").child(postId).remove()
-    .then(function() {
-      console.log("El documento ha sido borrado");
-    })
-    .catch(function(error) {
-      // The document probably doesn't exist.
-      console.error("Error al editar el borrado", error);
-    });
+  if (confirm("¿Seguro que quieres borrar este post?")) {
+    event.stopPropagation(); //se activa solamente donde se hace click
+    const postId = event.target.getAttribute('data-post');
+    firebase.database().ref('post/').child(postId).remove();
+    return true;
+  } else {
+    return false;
+  }   
+}
+//Editar Post
+function updatePost(event) {
+  eventUpdate.stopPropagation();
+  const textId= event.target.getAttribute('data-text');
+  firebase.database().ref('post/' + textId).once("value", function(post){
+    const postAreaText = (post.val().text);
+    document.getElementsByClassName("postTextArea").value = postAreaText;
+    const btnEdit = document.getElementById("sendPost");
+    btnEdit.innerHTML = "EDITAR";
+    btnEdit.onclick = function(){
+      firebase.database().ref('post').child(textId).update({
+        text: postAreaText
+      });
+    }
+  }); 
 }
 
-//function counterLike(event) {
-//  event.stopPropagation();
-//  const counterId = event.target.getAttribute("data-like");
-//    firebase.database().ref(`post/`+counterId).once("value", function(post) {
-//      let total = post.child("counter").val() || 0 + 1;
-//      console.log(total);
-//      let countId = firebase.database().ref(`post/`).child(counterId).push(
-//        { counter: total });
-//    });
+
+
