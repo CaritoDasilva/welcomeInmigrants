@@ -14,3 +14,24 @@
   }
 
   
+/*
+<div class="container-fluid" id="login">
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4 text-center">
+        <form class="align-content-center" id="loginContent">
+          <div class="form-group">
+          </div>
+          <h1 style="color: #E5E5E5 ">WELCOME</h1>
+          <h1 style="color: #E5E5E5">INMG</h1>
+          <div id="firebaseui-auth-container"></div>
+          <p id="out">
+            <u>Sign Out</u>
+          </p>
+      </div>
+      </form>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
+  </div>
+*/
