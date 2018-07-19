@@ -188,6 +188,7 @@
 
 =======
  Thu Jul 19 2018 09:17:54 GMT-0400 (STD)
+<<<<<<< HEAD
 >>>>>>> upstream/master
 [debug] [2018-07-19T12:53:00.357Z] ----------------------------------------------------------------------
 [debug] [2018-07-19T12:53:00.360Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
@@ -227,6 +228,24 @@
   
  Thu Jul 19 2018 09:53:03 GMT-0300 (CLT)
 [debug] [2018-07-19T12:53:05.426Z] <<< HTTP RESPONSE 200
+=======
+[debug] [2018-07-19T13:17:56.015Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-19T13:17:56.016Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/welcome-inmigrants/tokens  
+  
+ Thu Jul 19 2018 09:17:56 GMT-0400 (STD)
+[debug] [2018-07-19T13:17:56.728Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-19T13:17:56.730Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/welcome-inmigrants  
+  
+ Thu Jul 19 2018 09:17:56 GMT-0400 (STD)
+[debug] [2018-07-19T13:17:57.860Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/mnt/c/Users/CaroyMitz/Documents/CosasDeMama/LABORATORIA/proyecto-3/welcomeInmigrants'...
+[info] 
+[debug] [2018-07-19T13:17:57.872Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/517706659234/clients/_:getWebAppConfig  
+  
+ Thu Jul 19 2018 09:17:57 GMT-0400 (STD)
+[debug] [2018-07-19T13:17:58.357Z] <<< HTTP RESPONSE 200
+>>>>>>> upstream/master
 [info] i  hosting: Serving hosting files from: public
 [info] ✔  hosting: Local server: http://localhost:5000
 

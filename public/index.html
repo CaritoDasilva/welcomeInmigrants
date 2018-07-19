@@ -48,23 +48,36 @@
     <p id="out" style="text-align: left">
       <u>Sign Out</u>
     </p>
-
     <div class="chatZone">
-      <div id="messageContainer"></div>
-      <div id="map"></div>
       <div class="row">
-        <label for="usr">Destinatario:</label>
-      </div>
-      <div class="row">
-        <input type="text" class="form-control col-md-4" id="receiverName">
-        <div id="contactsChat"></div>
-      </div>
-      <div class="row">
-        <textarea class="form-control col-md-4" id="txt" rows="3" placeholder="Escribe tu mensaje..."></textarea>
-      </div>
-      <div class="row">
-        <button type="button" class="btn btn-outline-success" id="sendButton" value="SEND" onclick="sendMessage()">Enviar</button>
-        <i class="fas fa-map-marker-alt" id="mapIcon"></i>
+        <div class="col-sm-12">
+          <div class="row">
+            <div class="col-9 col-sm-9">
+              <div id="messageContainer"></div>
+              <div id="map"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-1 col-sm-1"></div>
+            <div class="col-6 col-sm-6">
+              <label for="usr">Destinatario:</label>
+              <input type="text" class="form-control" id="receiverName" style="width: 100%;">
+              <textarea class="form-control" id="txt" rows="3" placeholder="Escribe tu mensaje..." style="width: 100%;"></textarea>
+              <button type="button" class="btn btn-outline-success" id="sendButton" value="SEND" onclick="sendMessage()">Enviar</button>
+              <i class="fas fa-map-marker-alt" id="mapIcon"></i>
+            </div>
+            <div class="col-3 col-sm-3">
+              <div ></div>
+              <div class="form-group">
+                  <label for="exampleFormControlSelect2">Contactos</label>
+                  <select multiple class="form-control" id="contactsChat">
+                      <option></option>
+                  </select>
+                </div>
+            </div>
+            <div class="col-1 col-sm-1"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

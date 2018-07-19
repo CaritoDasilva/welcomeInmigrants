@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // firebase.database().ref('/users').on('value', showContacts);
   firebase.database().ref("/post").on("value", drawPosts);
-  firebase.database().ref("/messages").on("value", lastMessages);
+  // firebase.database().ref("/messages").on("value", lastMessages);
 
 
   document.getElementById('receiverName').addEventListener('keyup', findReceiver);
