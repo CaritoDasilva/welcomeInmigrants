@@ -1,7 +1,6 @@
 let userList = null;
 let receivers = null;
 
-
 const showMessages = (messages) => {
   messageContainer.innerHTML = '';
   firebase.database().ref('chats/' + createChat(firebase.auth().currentUser.uid) + '/messages')
@@ -37,12 +36,8 @@ const sendMessage = () => {
       text: messageAreaTextChat,
       read: false
     })
-
-
   }
 }
-
-
 
 let privateChat = (uid, name, picture) => {
   chatRef = firebase.database().ref('chats/' + createChat(uid, firebase.auth().currentUser.uid) + '/messages');
@@ -54,8 +49,6 @@ let privateChat = (uid, name, picture) => {
   document.getElementById('receiverName').value = name;
   showContacts([]);
 }
-
-
 
 const showContacts = (users) => {
   let contactsByOrder = '<ul>';
