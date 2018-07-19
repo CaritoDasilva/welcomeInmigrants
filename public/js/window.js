@@ -1,6 +1,4 @@
 window.onload = () => {
-  posting();
-
-
-
+  postingFood();
 }
+

@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <title>SOCIAL INMG</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
     crossorigin="anonymous">
@@ -17,7 +18,6 @@
   <!-- Iconos y fuentes de  Font Awesome's -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
     crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/stylePost.css">
 
@@ -71,8 +71,9 @@
       </div>
     </div>
   </div>
+  </div>
   <!-- Menú -->
-  <!-- <section class="secondSection">
+  <section class="firtsSection">
     <div class="pos-f-t">
 
       <nav class="navbar navbar-dark" style="background-color: #26A69A;">
@@ -84,87 +85,82 @@
           <span class="navbar-toggler-icon"></span>
         </button>
       </nav>
-      <nav id="sideMenu" class="nav flex-column float-left menu bg-dark menu_closed">
-        <div onclick="toggleMenu()" class="close_button">
+      <nav id="sideMenu" class="nav flex-column float-left menu  menu_closed" style="background-color: #FCFCFC;">
+        <div onclick="toggleMenu()" class="close_button text-secondary">
           <span aria-hidden="true">&times;</span>
         </div>
         <div class="menu_content">
-          <a class="nav-link active" href="#">Active</a>
-          <a class="nav-link" href="#">Link</a>
-          <a class="nav-link" href="#">Link</a>
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </div> -->
+          <a class="nav-link active text-secondary" href="#">
+            <i class="far fa-user"> </i> Perfil</a>
+          <a class="nav-link text-secondary" href="#">
+            <i class="far fa-envelope"> </i> Mensajes</a>
+          <a class="nav-link text-secondary" href="#">
+            <i class="fas fa-users"></i> Contactos</a>
+          <a class="nav-link text-secondary" href="#">
+            <i class="fas fa-utensils"></i> Alimentación</a>
+          <a class="nav-link text-secondary" href="#">
+            <i class="fas fa-graduation-cap"></i> Educación</a>
+          <a class="nav-link text-secondary" href="#">
+            <i class="fas fa-briefcase-medical"></i> Salud</a>
 
-  <!-- div para almacenar post -->
-  <div class="row">
-    <div class="col-sm-3"></div>
-    <div class="col-sm-6">
-      <div class="card" style="width: 100%;" id="postPrint">
-        <!-- aquí dentro van los post -->
-        </nav>
+        </div>
+      </nav>
+    </div>
+    <!-- inicio de img -->
+    <div class="container-fluid">
+      <div class="row">
+        <div id="imgAliment"></div>
       </div>
-      <!-- inicio de img -->
-      <div class="container-fluid" id="postFood">
-        <div class="row">
-          <img src="../imagenes/ja-ma-216495-unsplash.jpg" class="img-fluid" alt="Responsive image">
-        </div>
-        <!-- Post Usuario -->
-        <div class="col-sm"></div>
-        <div class="row">
-          <div class="col-sm-3"></div>
-          <div class="col-sm-6">
-            <!-- Caja de comentarios -->
-            <div class="card" style="width: 100%;">
-              <div class="card-body">
-                <textarea class="form-control" id="postArea" type="text" placeholder="¿En que te podemos ayudar?"></textarea>
-                <button class="btn btn-light" id="sendPost">SEND</button>
-              </div>
+      <!-- Post Usuario -->
+      <div class="col-sm"></div>
+      <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+          <!-- Caja de comentarios -->
+          <div class="card" style="width: 100%;">
+            <div class="card-body">
+              <textarea class="form-control" id="postArea" type="text" placeholder="¿En que te podemos ayudar?"></textarea>
+              <button class="btn btn-light" id="sendPost">SEND</button>
             </div>
-          </div>
-          <div class="col-sm-3"></div>
-        </div>
-        </section>
-
-        <!-- Termino de post -->
-
-        <!-- div para almacenar post -->
-        <div class="row">
-          <div class="col-sm-3"></div>
-          <div class="col-sm-6">
-            <div class="card" style="width: 100%;" id="postPrint">
-              <!-- aquí dentro van los post -->
-            </div>
-            <div id="printLike"></div>
           </div>
         </div>
         <div class="col-sm-3"></div>
       </div>
+      <!-- div para almacenar post -->
+      <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+          <div class="card" style="width: 100%;" id="postPrint">
+            <!-- aquí dentro van los post -->
+          </div>
+          <div id="printLike"></div>
+        </div>
+      </div>
+      <div class="col-sm-3"></div>
     </div>
-    </section>
-    <!-- Termino de post -->
-
-
-    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-messaging.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-functions.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-      crossorigin="anonymous"></script>
-    <script src="js/chat.js"></script>
-    <script src="js/post.js"></script>
-    <script src="js/maps.js"></script>
-    <script src="js/window.js"></script>
-    <script src="js/users.js"></script>
-    <script src="js/menu.js"></script>
-    <script src="js/main.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqNlv9z9afGPcwxWriGIjC65mGTU_QvpY&callback=initMap">
-    </script>
+    </div>
+  </section>
+  <!-- Termino de post Alimentación-->
+  
+  <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-messaging.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-functions.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+  <script src="js/chat.js"></script>
+  <script src="js/loginfb.js"></script>
+  <script src="js/window.js"></script>
+  <script src="js/users.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/postFood.js"></script>
 </body>
 
 </html>
