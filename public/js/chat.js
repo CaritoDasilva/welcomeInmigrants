@@ -1,14 +1,20 @@
 let userList = null;
 let receivers = null;
 
+
 const showMessages = (messages) => {
   messageContainer.innerHTML = '';
   firebase.database().ref('chats/' + createChat(firebase.auth().currentUser.uid) + '/messages')
     .limitToLast(2)
     .on('child_added', (newMessage) => {
       messageContainer.innerHTML += `
-        <p>Nombre : ${newMessage.val().creatorName}</p>
-        <p>${newMessage.val().text}</p>`;
+      <ul class="list-group list-group-flush" style="width: 100%;">
+      <li class="list-group-item border-info">
+      <h6 class="card-title"> Nombre : ${newMessage.val().creatorName} </h6>
+      <p class="card-text text-justify">${newMessage.val().text}</p>
+      </li>
+    </ul>
+    `;
     });
 };
 
@@ -36,8 +42,12 @@ const sendMessage = () => {
       text: messageAreaTextChat,
       read: false
     })
+
+
   }
 }
+
+
 
 let privateChat = (uid, name, picture) => {
   chatRef = firebase.database().ref('chats/' + createChat(uid, firebase.auth().currentUser.uid) + '/messages');
@@ -49,6 +59,8 @@ let privateChat = (uid, name, picture) => {
   document.getElementById('receiverName').value = name;
   showContacts([]);
 }
+
+
 
 const showContacts = (users) => {
   let contactsByOrder = '<ul>';

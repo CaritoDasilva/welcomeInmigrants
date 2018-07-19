@@ -52,9 +52,14 @@
       <div class="row">
         <div class="col-sm-12">
           <div class="row">
+            <div class="col-1 col-sm-1"></div>
             <div class="col-9 col-sm-9">
-              <div id="messageContainer"></div>
-              <div id="map"></div>
+              <div id="messageBox">
+                  <div class="card " style="width: 100%;" id="messageContainer">
+                      <!-- aquí dentro van los mensajes del chat -->
+                      <div id="map"></div>
+                  </div>
+              </div>
             </div>
           </div>
           <div class="row">
@@ -67,13 +72,8 @@
               <i class="fas fa-map-marker-alt" id="mapIcon"></i>
             </div>
             <div class="col-3 col-sm-3">
-              <div ></div>
-              <div class="form-group">
-                  <label for="exampleFormControlSelect2">Contactos</label>
-                  <select multiple class="form-control" id="contactsChat">
-                      <option></option>
-                  </select>
-                </div>
+              <div id="contactsChat"></div>
+              
             </div>
             <div class="col-1 col-sm-1"></div>
           </div>
