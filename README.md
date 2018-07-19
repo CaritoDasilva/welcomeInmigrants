@@ -12,7 +12,16 @@ Este proyecto nace de la  necesidad de construir una plataforma de información 
 
 Diseño de Interfaz de Usuario
 
-Realizamos el prototipo de baja fidelidad en Moqups, donde planteamos el bosquejo de nuestra red social y el prototipo de alta fidelidad lo hicimos en Figma  que refleja 
+Realizamos el prototipo de baja fidelidad en Moqups, donde planteamos el bosquejo de nuestra red social y el prototipo de alta fidelidad lo hicimos en Figma  que refleja.
+
+Skecth de baja fidelidad
+![alt text]("./public/imagenes/1.png")
+![alt text]("./public/imagenes/2.png")
+![alt text]("./public/imagenes/3.png")
+
+Skecth de alta fidelidad 
+https://www.figma.com/file/6tsUMuSrP68GZye1YCsxRh/Socia-lINMG?node-id=0%3A1
+
 
 
 

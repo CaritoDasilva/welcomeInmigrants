@@ -1,4 +1,4 @@
-function postingFood() {
+window.postingFood = () => {
   // POST INICIO
   sendPost.addEventListener("click", () => {
     const currentUser = firebase.auth().currentUser;
