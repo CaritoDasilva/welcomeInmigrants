@@ -2,4 +2,8 @@ node_modules
 package-lock.json
 firebase.json
 data
+<<<<<<< HEAD
 firebase-debug.log
+=======
+firebase-debug.log
+>>>>>>> upstream/master

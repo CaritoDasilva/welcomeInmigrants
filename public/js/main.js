@@ -31,7 +31,10 @@ document.addEventListener('DOMContentLoaded', function () {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         console.log(user)
-        document.getElementById("firebaseui-auth-container").innerHTML = "Hola " + user.displayName;
+        login.style.display = "none";
+        welcomeUser.style.display = "block";
+        document.getElementById("userLogin").innerHTML = "Hola " + user.displayName;
+
         userCreate = firebase.database().ref('users/' + user.uid); +
         userCreate.set({
           displayName: user.displayName || user.providerData[0].email,
@@ -42,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         console.log(user.uid + user.displayName);
       } else {
-        document.getElementById("firebaseui-auth-container").innerHTML = "";
+        document.getElementById("userLogin").innerHTML = "";
         ui.start('#firebaseui-auth-container', uiConfig);
       }
     });
@@ -50,8 +53,10 @@ document.addEventListener('DOMContentLoaded', function () {
     console.error(e);
   }
 
-  firebase.database().ref('/users').on('value', showContacts);
+  // firebase.database().ref('/users').on('value', showContacts);
   firebase.database().ref("/post").on("value", drawPosts);
+  firebase.database().ref("/messages").on("value", lastMessages);
+
 
   document.getElementById('receiverName').addEventListener('keyup', findReceiver);
   document.getElementById('receiverName').addEventListener('click', loadContacts);
@@ -60,5 +65,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
 out.addEventListener('click', () => {
   firebase.auth().signOut();
-
+  login.style.display = "block";
 });

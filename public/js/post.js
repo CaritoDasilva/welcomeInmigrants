@@ -21,13 +21,16 @@ function posting() {
           creator: currentUser.displayName,
           creatorEmail: currentUser.email,
           text: postAreaText,
-          counter : 0
+          counter: 0
         });
     }
   });
 }
 //Imprimir Post
 const drawPosts = posts => {
+  if (!posts || !posts.val()) {
+    return;
+  }
   postPrint.innerHTML = "";
   Object.entries(posts.val()).forEach(post => {
     postPrint.innerHTML += `
@@ -50,11 +53,12 @@ const drawPosts = posts => {
 function counterLike(event) {
   event.stopPropagation();
   const counterId = event.target.getAttribute('data-like');
-  firebase.database().ref(`post/` + counterId).once("value", function(post) {
+  firebase.database().ref(`post/` + counterId).once("value", function (post) {
     let total = (post.val().counter || 0) + 1;
-      firebase.database().ref(`post`).child(counterId).update({ 
-        counter: total });
+    firebase.database().ref(`post`).child(counterId).update({
+      counter: total
     });
+  });
 }
 //Borrar Post
 function deletePost(event) {

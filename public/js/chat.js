@@ -1,10 +1,11 @@
 let userList = null;
 let chatRef = null;
-let receiver = null;
+let receivers = null;
 
 const showMessages = (messages) => {
   messageContainer.innerHTML = '';
   messages.forEach((newMessage) => {
+
     messageContainer.innerHTML += `
         <p>Nombre : ${newMessage.val().creatorName}</p>
         <p>${newMessage.val().text}</p>`;
@@ -23,8 +24,9 @@ const sendMessage = () => {
     chatRef.push({
       creator: currentUser.uid,
       creatorName: currentUser.displayName,
-      receiver: receiver,
-      text: messageAreaTextChat
+      receiver: receiverName.value,
+      text: messageAreaTextChat,
+      read: false
     });
   }
 }
@@ -46,6 +48,19 @@ let privateChat = (uid, name, picture) => {
   chatRef.on('value', showMessages);
   document.getElementById('receiverName').value = name;
   showContacts([]);
+}
+
+const lastMessages = () => {
+  firebase.database().ref('chats/messages')
+    .limitToLast(5) // Filtro para no obtener todos los mensajes
+    .once('value')
+    .then((chats) => {
+      console.log("Mensajes > " + JSON.stringify(chat));
+    })
+    .catch(() => {
+
+    });
+
 }
 
 const showContacts = (users) => {
@@ -70,3 +85,11 @@ const findReceiver = (event) => {
   });
   showContacts(receivers);
 };
+
+map.addEventListener('click', () => {
+
+})
+
+mapIcon.addEventListener('click', () => {
+  showMap();
+});
