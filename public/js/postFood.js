@@ -1,5 +1,4 @@
-// POST USUARIO
-function posting() {
+function postingFood() {
   // POST INICIO
   sendPost.addEventListener('click', () => {
     const currentUser = firebase.auth().currentUser;
@@ -8,7 +7,7 @@ function posting() {
     if (postAreaText === '') {
       alert("Por favor, debe introducir texto");
     } else {
-      //Para tener una nueva llave en la colección messages
+      //Para tener una nueva llave en la colección post
       let newPostKey = firebase
         .database()
         .ref()
@@ -39,9 +38,13 @@ const drawPosts = posts => {
              <h6 class="card-title">${post[1].creator}</h6>
              <p class="card-text text-justify">${post[1].text}</p>
              <span>
-             <i class="fas fa-edit" data-text="${post[1].text}" onclick="updatePost("eventUpdate") id="editPost"> </i> <i class="fas fa-trash-alt" 
+             <i class="fas fa-edit" data-text="${
+      post[1].text
+      }" onclick="updatePost("eventUpdate") id="editPost"> </i> <i class="fas fa-trash-alt" 
              data-post="${post[0]}" onclick="deletePost(event)"></i>
-             <i class="far fa-hand-peace" data-like="${post[0]}" onclick="counterLike(event)"></i><span>${post[1].counter}</span>
+             <i class="far fa-hand-peace" data-like="${
+      post[0]
+      }" onclick="counterLike(event)"></i><span>${post[1].counter}</span>
              </span> 
              </li>
            </ul>
@@ -49,7 +52,7 @@ const drawPosts = posts => {
        `;
   });
 };
-// Like
+// Like Post
 function counterLike(event) {
   event.stopPropagation();
   const counterId = event.target.getAttribute('data-like');
@@ -69,23 +72,23 @@ function deletePost(event) {
     return true;
   } else {
     return false;
-  }   
+  }
 }
 //Editar Post
 function updatePost(event) {
   eventUpdate.stopPropagation();
-  const textId= event.target.getAttribute('data-text');
-  firebase.database().ref('post/' + textId).once("value", function(post){
+  const textId = event.target.getAttribute('data-text');
+  firebase.database().ref('post/' + textId).once("value", function (post) {
     const postAreaText = (post.val().text);
     document.getElementsByClassName("postTextArea").value = postAreaText;
     const btnEdit = document.getElementById("sendPost");
     btnEdit.innerHTML = "EDITAR";
-    btnEdit.onclick = function(){
+    btnEdit.onclick = function () {
       firebase.database().ref('post').child(textId).update({
         text: postAreaText
       });
     }
-  }); 
+  });
 }
 
 

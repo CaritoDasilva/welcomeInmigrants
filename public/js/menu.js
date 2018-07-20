@@ -1,21 +1,31 @@
-function menu() {
-   function toggleMenu() {
-    // añadir función onclick="toggleMenu()" al botón del nav bar y al botón cerrar.
-     if (sideMenu.className.indexOf("menu_closed") >= 0) {
-       // primero revisamos si la clase d-none esta
-       openMenu(); // si esta la clase quiere decir que el menú esta cerrado, asi que llamamos la funcion para abrirlo
-     } else {
-       closeMenu(); //si no esta la clase, le indicamos que cierre el menu
-     }
-   }
+function toggleMenu() {
+  if (sideMenu.className.indexOf('menu_closed') >= 0) {
+    openMenu();
+  } else {
+    closeMenu();
+  }
+}
 
-   function openMenu() {
-     sideMenu.classList.remove("menu_closed"); // quitando clase display-none
-     sideMenu.classList.add("menu_open");
-   }
+function openMenu() {
+  sideMenu.classList.remove('menu_closed');
+  sideMenu.classList.add('menu_open');
+}
 
-   function closeMenu() {
-     sideMenu.classList.add("menu_closed"); // añadimos la clase display-none
-     sideMenu.classList.remove("menu_open");
-   } 
- };
+function closeMenu() {
+  sideMenu.classList.add('menu_closed');
+  sideMenu.classList.remove('menu_open');
+}
+
+// Cambio de páginas
+function chatPage() {
+  menuContent.classList.remove('show');
+  forumPost.classList.add('d-none');
+  welcomeUser.classList.remove('d-none');
+}
+
+// Cambio de páginas
+function forumPage() {
+  menuContent.classList.remove('show');
+  welcomeUser.classList.add('d-none');
+  forumPost.classList.remove('d-none');
+}

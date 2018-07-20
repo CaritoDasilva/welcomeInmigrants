@@ -1,3 +1,8 @@
+/* Panatlla login */
+#welcomeUser {
+  display: none;
+}
+
 #login {
   background-image: url("../imagenes/nicholas-green-324622-unsplash.jpg");
   background-size: cover;
@@ -22,7 +27,7 @@
   text-align: center;
   font-size: 100%;
 }
-
+/* Botones */
 .btn {
   background-color: rgb(52, 158, 123);
   color: white;
@@ -33,21 +38,17 @@
   color: rgb(52, 158, 123);
   box-shadow: inset 0 0 0 3px rgb(52, 158, 123);
 }
-
-#welcomeUser {
-  display: none;
-}
-
+/*Post foro*/
 #postFood {
   display: none;
 }
-
 /*CHAT*/
 #messageBox {
   height: 70vh;
   background-color: rgba(224, 242, 241, 0.61);
   border: 0.5px solid  rgb(52, 158, 123);
   border-radius: 0.5%;
+  overflow: scroll;
 }
 #map {
   margin: 5%;
@@ -70,25 +71,16 @@
   margin: 10%;
 }
 
-  
-/*
-<div class="container-fluid" id="login">
-    <div class="row">
-      <div class="col-sm-4"></div>
-      <div class="col-sm-4 text-center">
-        <form class="align-content-center" id="loginContent">
-          <div class="form-group">
-          </div>
-          <h1 style="color: #E5E5E5 ">WELCOME</h1>
-          <h1 style="color: #E5E5E5">INMG</h1>
-          <div id="firebaseui-auth-container"></div>
-          <p id="out">
-            <u>Sign Out</u>
-          </p>
-      </div>
-      </form>
-    </div>
-    <div class="col-sm-4"></div>
-  </div>
-  </div>
-*/
+#welcomeUser {
+  font-family: 'Francois One', sans-serif;
+}
+
+#messageContainer {
+  height: 70vh;
+}
+
+#mapContent {
+  margin: 5%;
+  height: 400px;
+  width: 600px;
+}

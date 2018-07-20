@@ -18,7 +18,7 @@ let map, infoWindow;
 
 
 const showMap = () => {
-  map = new google.maps.Map(document.getElementById('messageContainer'), {
+  map = new google.maps.Map(document.getElementById('mapContent'), {
     center: {
       lat: -34.397,
       lng: 150.644
