@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log(user)
         login.style.display = 'none';
         navContainer.style.display= 'none';
-        welcomeUser.style.display = 'block';
         document.getElementById("userLogin").innerHTML = "Hola " + user.displayName;
 
         userCreate = firebase.database().ref('users/' + user.uid); +

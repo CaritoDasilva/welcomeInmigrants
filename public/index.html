@@ -25,35 +25,39 @@
 
 <body>
   <!-- Menú -->
-      <div class="pos-f-t" id="navContainer">
-  
-        <nav class="navbar navbar-dark" style="background-color: #26A69A;">
-          <a class="navbar-brand" href="#">ALIMENTACIÓN</a>
-  
-          <button onclick="toggleMenu()" class="navbar-toggler" type="button" aria-controls="navbarToggleExternalContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-  
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </nav>
-        <nav id="sideMenu" class="nav flex-column float-left menu menu_closed" style="background-color: #FCFCFC; z-index: 100">
-          <div onclick="toggleMenu()" class="close_button text-secondary" data-target="#menuContent">
-            <span aria-hidden="true">&times;</span>
-          </div>
-          <div class="menu_content" id="menuContent">
-          <!--   <a class="nav-link active text-secondary" href="#">
+  <div class="pos-f-t" id="navContainer">
+
+    <nav class="navbar navbar-dark" style="background-color: #26A69A;">
+      <a class="navbar-brand" href="#">ALIMENTACIÓN</a>
+
+      <button onclick="toggleMenu()" class="navbar-toggler" type="button" aria-controls="navbarToggleExternalContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+    <nav id="sideMenu" class="nav flex-column float-left menu menu_closed" style="background-color: #FCFCFC; z-index: 100">
+      <div onclick="toggleMenu()" class="close_button text-secondary" data-target="#menuContent">
+        <span aria-hidden="true">&times;</span>
+      </div>
+      <div class="menu_content" id="menuContent">
+        <!--   <a class="nav-link active text-secondary" href="#">
               <i class="far fa-user"> </i> Perfil</a>  
             <a class="nav-link text-secondary" href="#"> -->
-            <a class="nav-link text-secondary" href="#" onclick="chatPage()"> <i class="far fa-envelope"> </i>  Mensajes </a>
-            <!--   <i class="fas fa-users"></i> Contactos</a>
+        <a class="nav-link text-secondary" href="#" onclick="chatPage(event)">
+          <i class="far fa-envelope"> </i> Mensajes </a>
+        <!--   <i class="fas fa-users"></i> Contactos</a>
             <a class="nav-link text-secondary" href="#">  -->
-            <a class="nav-link text-secondary" href="#" onclick="forumPage()"> <i class="fas fa-utensils"></i> Alimentación </a> 
-            <!--   <i class="fas fa-graduation-cap"></i> Educación</a>
+        <a class="nav-link text-secondary" href="#" onclick="forumPage(event)">
+          <i class="fas fa-utensils"></i> Alimentación </a>
+        <!--   <i class="fas fa-graduation-cap"></i> Educación</a>
             <a class="nav-link text-secondary" href="#">
-              <i class="fas fa-briefcase-medical"></i> Salud</a> -->
-          </div>
-        </nav>
+              <i class="fas fa-sign-out-alt"></i><p id="out" style="text-align: left">
+      <u>Sign Out</u>
+    </p></a> -->
       </div>
+    </nav>
+  </div>
   <!-- Login -->
   <div class="container-fluid">
 
@@ -72,83 +76,77 @@
       <div class="col-sm-4"></div>
     </div>
   </div>
-
   <!-- Aquí comienza el chat -->
   <div class="container-fluid page" id="welcomeUser">
     <div id="userLogin"></div>
     <p id="out" style="text-align: left">
       <u>Sign Out</u>
     </p>
-  <!--  Container del Chat-->
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="row">
-            <div class="col-1 col-sm-1"></div>
-            <div class="col-9 col-sm-9">
-              <div id="messageBox">
-                  <div class="card " style="width: 100%;" id="messageContainer">
-                      <!-- aquí dentro van los mensajes del chat -->
-                      <div class="col-sm-4" id="mapContent"></div>
-                  </div>
+    <!--  Container del Chat-->
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="row">
+          <div class="col-1 col-sm-1"></div>
+          <div class="col-9 col-sm-9">
+            <div id="messageBox">
+              <div class="card " style="width: 100%;" id="messageContainer">
+                <!-- aquí dentro van los mensajes del chat -->
+                <div class="col-sm-4" id="mapContent"></div>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-1 col-sm-1"></div>
-            <div class="col-6 col-sm-6">
-              <label for="usr">Destinatario:</label>
-              <input type="text" class="form-control" id="receiverName" style="width: 100%;">
-              <textarea class="form-control" id="txt" rows="3" placeholder="Escribe tu mensaje..." style="width: 100%;"></textarea>
-              <button type="button" class="btn btn-outline-success" id="sendButton" value="SEND" onclick="sendMessage()">Enviar</button>
-              <i class="fas fa-map-marker-alt" id="mapIcon"></i>
-            </div>
-            <div class="col-3 col-sm-3">
-              <div id="contactsChat"></div>
-              
-            </div>
-            <div class="col-1 col-sm-1"></div>
+        </div>
+        <div class="row">
+          <div class="col-1 col-sm-1"></div>
+          <div class="col-6 col-sm-6">
+            <label for="usr">Destinatario:</label>
+            <input type="text" class="form-control" id="receiverName" style="width: 100%;">
+            <textarea class="form-control" id="txt" rows="3" placeholder="Escribe tu mensaje..." style="width: 100%;"></textarea>
+            <button type="button" class="btn btn-outline-success" id="sendButton" value="SEND" onclick="sendMessage()">Enviar</button>
+            <i class="fas fa-map-marker-alt" id="mapIcon"></i>
           </div>
+          <div class="col-3 col-sm-3">
+            <div id="contactsChat"></div>
+          </div>
+          <div class="col-1 col-sm-1"></div>
         </div>
       </div>
     </div>
   </div>
-  </div>
-    <!-- inicio de img -->
-    <div class="container-fluid page" id="forumPost">
-      <div class="row">
-        <div id="imgAliment"></div>
-      </div>
-      <!-- Post Usuario -->
-      <div class="col-sm"></div>
-      <div class="row">
-        <div class="col-sm-3"></div>
-        <div class="col-sm-6">
-          <!-- Caja de comentarios -->
-          <div class="card" style="width: 100%;">
-            <div class="card-body">
-              <textarea class="form-control" id="postArea" type="text" placeholder="¿En que te podemos ayudar?"></textarea>
-              <button class="btn btn-light" id="sendPost">SEND</button>
-            </div>
+  <!-- inicio de img -->
+  <div class="container-fluid page" id="forumPost">
+    <div class="row">
+      <div id="imgAliment"></div>
+    </div>
+    <!-- Post Usuario -->
+    <div class="col-sm"></div>
+    <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6">
+        <!-- Caja de comentarios -->
+        <div class="card" style="width: 100%;">
+          <div class="card-body">
+            <textarea class="form-control" id="postArea" type="text" placeholder="¿En que te podemos ayudar?"></textarea>
+            <button class="btn btn-light" id="sendPost">SEND</button>
           </div>
-        </div>
-        <div class="col-sm-3"></div>
-      </div>
-      <!-- div para almacenar post -->
-      <div class="row">
-        <div class="col-sm-3"></div>
-        <div class="col-sm-6">
-          <div class="card" style="width: 100%;" id="postPrint">
-            <!-- aquí dentro van los post -->
-          </div>
-          <div id="printLike"></div>
         </div>
       </div>
       <div class="col-sm-3"></div>
     </div>
+    <!-- div para almacenar post -->
+    <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6">
+        <div class="card" style="width: 100%;" id="postPrint">
+          <!-- aquí dentro van los post -->
+        </div>
+        <div id="printLike"></div>
+      </div>
     </div>
-  </section>
+    <div class="col-sm-3"></div>
+  </div>
   <!-- Termino de post Alimentación-->
-  
+
   <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-database.js"></script>
@@ -164,6 +162,7 @@
   <script src="js/chat.js"></script>
   <script src="js/loginfb.js"></script>
   <script src="js/window.js"></script>
+  <script src="js/maps.js"></script>
   <script src="js/users.js"></script>
   <script src="js/menu.js"></script>
   <script src="js/main.js"></script>

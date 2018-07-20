@@ -16,16 +16,20 @@ function closeMenu() {
   sideMenu.classList.remove('menu_open');
 }
 
+
+
 // Cambio de páginas
-function chatPage() {
-  menuContent.classList.remove('show');
+function chatPage(event) {
+  event.preventDefault();
+  closeMenu();
   forumPost.classList.add('d-none');
   welcomeUser.classList.remove('d-none');
 }
 
 // Cambio de páginas
-function forumPage() {
-  menuContent.classList.remove('show');
+function forumPage(event) {
+  event.preventDefault();
+  closeMenu();
   welcomeUser.classList.add('d-none');
   forumPost.classList.remove('d-none');
 }
