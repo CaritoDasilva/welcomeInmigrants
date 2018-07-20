@@ -32,17 +32,17 @@ document.addEventListener('DOMContentLoaded', function () {
       if (user) {
         console.log(user)
         login.style.display = 'none';
-        welcomeUser.style.display = 'block';
+        navContainer.style.display= 'none';
         document.getElementById("userLogin").innerHTML = "Hola " + user.displayName;
 
         userCreate = firebase.database().ref('users/' + user.uid); +
-        userCreate.set({
-          displayName: user.displayName || user.providerData[0].email,
-          email: user.email || user.providerData[0].email,
-          photoUrl: user.photoURL || '',
-          createdOn: user.metadata.createdAt || new Date(),
-          uid: user.uid
-        })
+          userCreate.set({
+            displayName: user.displayName || user.providerData[0].email,
+            email: user.email || user.providerData[0].email,
+            photoUrl: user.photoURL || '',
+            createdOn: user.metadata.createdAt || new Date(),
+            uid: user.uid
+          })
         console.log(user.uid + user.displayName);
       } else {
         document.getElementById('userLogin').innerHTML = '';
