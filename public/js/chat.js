@@ -7,10 +7,12 @@ const showMessages = (messages) => {
   firebase.database().ref('chats/' + createChat(firebase.auth().currentUser.uid) + '/messages')
     .limitToLast(2)
     .on('child_added', (newMessage) => {
+
       messageContainer.innerHTML += `
         <p>Nombre : ${newMessage.val().creatorName}</p>
         <p>${newMessage.val().text}</p>`;
     });
+
 };
 
 let createChat = (uid1, uid2) => {
@@ -36,7 +38,7 @@ const sendMessage = () => {
       receiver: receiverName.value,
       text: messageAreaTextChat,
       read: false,
-      // map: map
+
     })
 
 
