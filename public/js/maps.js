@@ -29,7 +29,7 @@ const showMap = () => {
 
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition((position) => {
+    let location = navigator.geolocation.getCurrentPosition((position) => {
       var pos = {
         lat: position.coords.latitude,
         lng: position.coords.longitude
